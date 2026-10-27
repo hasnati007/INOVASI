@@ -1,0 +1,521 @@
+
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cadangan Penambahbaikan Dokumen Data Inovasi JKE — PSMZA</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1f2328;
+    background: #f7f8fa;
+    padding: 32px 16px 48px;
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    background: #1f4e79;
+    color: #ffffff;
+    padding: 28px 32px 24px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .header p {
+    font-size: 13px;
+    opacity: 0.82;
+  }
+  .header .meta {
+    margin-top: 14px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    opacity: 0.78;
+  }
+  .header .meta span { display: flex; align-items: center; gap: 5px; }
+
+  /* Body padding */
+  .body { padding: 28px 32px; }
+
+  /* Section */
+  .section { margin-bottom: 30px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #57606a;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+  .section-heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1f2328;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-heading .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  th {
+    background: #1f4e79;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f7f8fa; }
+  td code {
+    background: #f0f3f6;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: "Consolas", "Courier New", monospace;
+    color: #0550ae;
+  }
+
+  /* Priority table special */
+  .prio-high { color: #cf222e; font-weight: 700; }
+  .prio-med  { color: #9a6700; font-weight: 700; }
+  .prio-low  { color: #1a7f37; font-weight: 700; }
+
+  /* Folder tree */
+  .folder-tree {
+    background: #f0f3f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: #1f2328;
+  }
+  .folder-tree .dir  { color: #0550ae; font-weight: 600; }
+  .folder-tree .file { color: #1a7f37; }
+  .folder-tree .comment { color: #57606a; font-style: italic; }
+
+  /* Flow diagram (SVG) */
+  .flow-wrap {
+    background: #f7f8fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+  /* Callout */
+  .callout {
+    background: #ebf3fb;
+    border-left: 4px solid #3b82d4;
+    border-radius: 0 4px 4px 0;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #1f2328;
+    margin-bottom: 14px;
+  }
+
+  /* KPI cards */
+  .kpi-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .kpi-card {
+    flex: 1;
+    min-width: 140px;
+    background: #f7f8fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 5px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .kpi-card .kpi-num {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f4e79;
+    line-height: 1.1;
+  }
+  .kpi-card .kpi-label {
+    font-size: 11.5px;
+    color: #57606a;
+    margin-top: 3px;
+  }
+
+  /* Step list */
+  .step-list { list-style: none; padding: 0; }
+  .step-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f3f6;
+    font-size: 13px;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1f4e79;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 32px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 11.5px;
+    color: #57606a;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  
+  <div class="header">
+    <div class="badge">Laporan Penambahbaikan</div>
+    <h1>Sistem Data Inovasi JKE — PSMZA</h1>
+    <p>Cadangan penambahbaikan dokumen &amp; proses pengurusan data inovasi<br />Jabatan Kejuruteraan Elektrik, Politeknik Sultan Mizan Zainal Abidin</p>
+    <div class="meta">
+      <span>👤 Disediakan untuk: Hasnati, Penyelaras Inovasi JKE</span>
+      <span>📅 Tahun Semasa: 2025</span>
+      <span>🏢 Skop: Jabatan Kejuruteraan Elektrik</span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    
+    <div class="section">
+      <div class="section-title">Gambaran Keseluruhan Cadangan</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-num">4</div><div class="kpi-label">Kolum Tambahan<br />Dicadangkan</div></div>
+        <div class="kpi-card"><div class="kpi-num">3</div><div class="kpi-label">Sheet Baru<br />Dicadangkan</div></div>
+        <div class="kpi-card"><div class="kpi-num">2</div><div class="kpi-label">Jadual Ringkasan<br />Tambahan</div></div>
+        <div class="kpi-card"><div class="kpi-num">6</div><div class="kpi-label">Langkah Proses<br />Kerja</div></div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">1. Penambahbaikan Borang Input</div>
+      <div class="section-heading">
+        <span class="icon" style="background:#ebf3fb;color:#1f4e79">📋</span>
+        Kolum Tambahan Khusus JKE
+      </div>
+      <div class="callout">
+        Tracker semasa mempunyai 16 kolum umum. Kolum berikut dicadangkan untuk memenuhi keperluan khusus data teknikal di JKE.
+      </div>
+      <table>
+        <thead>
+          <tr><th>Kolum Baru</th><th>Contoh Nilai</th><th>Tujuan</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Program / Kursus</code></td>
+            <td>DEE, DEM, DEP</td>
+            <td>Kenal pasti pelajar dari program mana dalam JKE</td>
+          </tr>
+          <tr>
+            <td><code>Nama Pensyarah Penyelia</code></td>
+            <td>Tn. Hj. Ahmad</td>
+            <td>Inovasi pelajar biasanya ada penyelia — penting untuk pelaporan</td>
+          </tr>
+          <tr>
+            <td><code>Nama Produk / Prototaip</code></td>
+            <td>Solar Panel Controller v2</td>
+            <td>Khusus untuk inovasi teknikal dan alat ciptaan di JKE</td>
+          </tr>
+          <tr>
+            <td><code>No. Harta Intelek / IP</code></td>
+            <td>MY-IP-2025-0042</td>
+            <td>Rekod permohonan paten atau hakcipta jika ada</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">2. Penambahbaikan Laporan Ringkasan</div>
+      <div class="section-heading">
+        <span class="icon" style="background:#e8f5e9;color:#1a7f37">📊</span>
+        Jadual Analisis Tambahan
+      </div>
+      <table>
+        <thead>
+          <tr><th>Jadual</th><th>Kandungan</th><th>Formula Asas</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Jadual 5</strong><br />Mengikut Program</td>
+            <td>Bilangan inovasi mengikut program (DEE / DEM / DEP)</td>
+            <td><code>COUNTIF(Program:Program,"DEE")</code></td>
+          </tr>
+          <tr>
+            <td><strong>Jadual 6</strong><br />Staff vs Pelajar</td>
+            <td>Perbandingan penyertaan staff dan pelajar — KPI tahunan</td>
+            <td><code>COUNTIF(JenisPenyertaan,"Staf")</code></td>
+          </tr>
+          <tr>
+            <td><strong>Jadual 7</strong><br />Tren 3 Tahun</td>
+            <td>Bilangan inovasi mengikut tahun (2023–2025)</td>
+            <td><code>COUNTIFS(Tahun:Tahun,2025)</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">3. Sheet Tambahan yang Dicadangkan</div>
+      <div class="section-heading">
+        <span class="icon" style="background:#fff3e0;color:#9a6700">📄</span>
+        Susun Atur Tab Workbook Baharu
+      </div>
+      <table>
+        <thead>
+          <tr><th>Sheet Baru</th><th>Warna Tab</th><th>Isi Kandungan</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Dashboard JKE</code></td>
+            <td>Oren</td>
+            <td>Ringkasan visual — % pencapaian medal, jumlah per semester, perbandingan staff/pelajar</td>
+          </tr>
+          <tr>
+            <td><code>Projek Aktif</code></td>
+            <td>Kuning</td>
+            <td>Auto-filter rekod dengan Status = "Dalam Proses" — mudah untuk tindakan susulan</td>
+          </tr>
+          <tr>
+            <td><code>Arkib</code></td>
+            <td>Kelabu</td>
+            <td>Rekod lama (lebih 2 tahun) dipindah ke sini supaya Borang Input tidak terlalu panjang</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div style="font-size:12.5px;color:#57606a;font-weight:600;margin-bottom:6px">Susunan Tab Dicadangkan:</div>
+      <div class="folder-tree">
+        <span class="dir">Borang Input</span>  | 
+        <span class="dir">Laporan Ringkasan</span>  | 
+        <span style="color:#b45309;font-weight:600">Dashboard JKE</span>  | 
+        <span style="color:#b45309;font-weight:600">Projek Aktif</span>  | 
+        <span style="color:#b45309;font-weight:600">Arkib</span>  | 
+        <span class="comment">Rujukan</span>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">4. Kawalan Kualiti Data</div>
+      <div class="section-heading">
+        <span class="icon" style="background:#fce8e8;color:#cf222e">✅</span>
+        Masalah Biasa &amp; Penyelesaian
+      </div>
+      <table>
+        <thead>
+          <tr><th>Masalah</th><th>Penyelesaian</th><th>Cara Laksana</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nama jabatan tidak seragam</td>
+            <td>Dropdown dari senarai tetap</td>
+            <td>Sudah ada dalam plan — gunakan sheet <code>Rujukan</code></td>
+          </tr>
+          <tr>
+            <td>Rekod pendua / duplikasi</td>
+            <td>Kolum <code>Semak Pendua</code></td>
+            <td><code>COUNTIF(TajukInovasi:TajukInovasi,D2)&gt;1</code></td>
+          </tr>
+          <tr>
+            <td>Data tidak lengkap</td>
+            <td>Kolum <code>% Kelengkapan</code></td>
+            <td>Kira berapa kolum wajib sudah diisi per baris</td>
+          </tr>
+          <tr>
+            <td>Tiada jejak kemaskini</td>
+            <td>Fail <code>Log_Kemaskini.txt</code></td>
+            <td>Catat tarikh, nama pengemas kini, dan perubahan dibuat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">5. Struktur Folder Fail Dicadangkan</div>
+      <div class="section-heading">
+        <span class="icon" style="background:#f0f3f6;color:#57606a">📁</span>
+        Organisasi Fail JKE 2025
+      </div>
+      <div class="folder-tree">
+<span class="dir">📁 JKE_Inovasi_2025/</span><br />
+    <span class="file">📊 PSMZA_Tracker_Inovasi_2025.xlsx</span>  <span class="comment">← fail utama</span><br />
+    <span class="dir">📁 Bukti_Sokongan/</span><br />
+        <span class="dir">📁 Sijil/</span>  <span class="comment">← sijil anugerah / penyertaan</span><br />
+        <span class="dir">📁 Gambar/</span>  <span class="comment">← foto pameran / prototaip</span><br />
+        <span class="dir">📁 Laporan_Teknikal/</span>  <span class="comment">← laporan inovasi teknikal</span><br />
+        <span class="dir">📁 Paten_IP/</span>  <span class="comment">← dokumen permohonan IP</span><br />
+    <span class="file">📄 Log_Kemaskini.txt</span>  <span class="comment">← rekod tarikh &amp; nama yang kemaskini</span>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">6. Proses Kerja Dicadangkan</div>
+      <div class="section-heading">
+        <span class="icon" style="background:#e8f5e9;color:#1a7f37">🔄</span>
+        Aliran Kerja Pengurusan Data Inovasi JKE
+      </div>
+      <ul class="step-list">
+        <li>
+          <div class="step-num">1</div>
+          <div><strong>Inovasi baharu berlaku</strong> — Staff atau pelajar terlibat dalam pertandingan / pameran inovasi.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div><strong>Isi Borang Input</strong> — Staff / pelajar atau Hasnati masukkan data ke dalam <code>Borang Input</code> dengan semua maklumat lengkap.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div><strong>Semak kelengkapan data</strong> — Hasnati semak kolum <code>% Kelengkapan</code> dan <code>Semak Pendua</code> untuk pastikan tiada ralat.</div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div><strong>Sahkan rekod</strong> — Hasnati ubah Status kepada <code>Siap</code> atau <code>Dipatenkan</code> apabila semua bukti sokongan sudah dikumpul.</div>
+        </li>
+        <li>
+          <div class="step-num">5</div>
+          <div><strong>Laporan Ringkasan auto-kemaskini</strong> — Semua jadual COUNTIFS dalam <code>Laporan Ringkasan</code> dan <code>Dashboard JKE</code> dikemas kini secara automatik.</div>
+        </li>
+        <li>
+          <div class="step-num">6</div>
+          <div><strong>Hantar laporan setiap semester</strong> — Export atau cetak <code>Laporan Ringkasan</code> untuk diserahkan kepada Ketua Jabatan / Politeknik.</div>
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">7. Pelan Tindakan &amp; Keutamaan</div>
+      <table>
+        <thead>
+          <tr><th>Keutamaan</th><th>Penambahbaikan</th><th>Anggaran Masa</th><th>Impak</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="prio-high">🔴 Segera</span></td>
+            <td>Tambah kolum <code>Program / Kursus</code> &amp; <code>Nama Penyelia</code></td>
+            <td>15 minit</td>
+            <td>Data lebih lengkap untuk pelaporan</td>
+          </tr>
+          <tr>
+            <td><span class="prio-high">🔴 Segera</span></td>
+            <td>Buat struktur folder <code>JKE_Inovasi_2025</code></td>
+            <td>10 minit</td>
+            <td>Organisasi fail lebih kemas</td>
+          </tr>
+          <tr>
+            <td><span class="prio-med">🟠 Sederhana</span></td>
+            <td>Tambah <code>Semak Pendua</code> &amp; <code>% Kelengkapan</code></td>
+            <td>20 minit</td>
+            <td>Kawalan kualiti data dipertingkat</td>
+          </tr>
+          <tr>
+            <td><span class="prio-med">🟠 Sederhana</span></td>
+            <td>Bina sheet <code>Projek Aktif</code> (auto-filter)</td>
+            <td>30 minit</td>
+            <td>Tindakan susulan lebih mudah</td>
+          </tr>
+          <tr>
+            <td><span class="prio-low">🟢 Jangka Panjang</span></td>
+            <td>Bina <code>Dashboard JKE</code> dengan ringkasan visual</td>
+            <td>1–2 jam</td>
+            <td>Laporan lebih profesional untuk pengurusan</td>
+          </tr>
+          <tr>
+            <td><span class="prio-low">🟢 Jangka Panjang</span></td>
+            <td>Tambah jadual tren 3 tahun dalam Laporan Ringkasan</td>
+            <td>45 minit</td>
+            <td>Analisis pertumbuhan inovasi JKE</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Disediakan oleh IBM Bob  ·  Jabatan Kejuruteraan Elektrik, PSMZA  ·  2025<br />
+    <span style="font-size:10.5px">Dokumen ini adalah cadangan — boleh disesuaikan mengikut keperluan semasa JKE.</span>
+  </div>
+
+</div>
+</body>
+</html>
